@@ -19,7 +19,6 @@ def Levenshtein_distance(code1, code2):
     cur_row = range(m+1)
     for i in range(1, n + 1):
         prev_row, cur_row = cur_row, [1] + [0]*m
-        cur_row[0] += 1
         for j in range(1, m + 1):
             add, delete, change = prev_row[j] + 1, cur_row[j - 1] + 1, prev_row[j - 1]
             if code2[j - 1] != code1[i - 1]:
